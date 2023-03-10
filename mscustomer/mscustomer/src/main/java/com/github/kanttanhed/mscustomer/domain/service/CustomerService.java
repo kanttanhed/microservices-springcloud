@@ -15,10 +15,14 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     public Customer save(Customer customer){
-        return customerRepository.save(customer);
+        try{
+            return customerRepository.save(customer);
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage(), e);
+        }
     }
 
     public Optional<Customer> getByCPF(String cpf){
-        return customerRepository.finfByCpf(cpf);
+        return customerRepository.findByCpf(cpf);
     }
 }
