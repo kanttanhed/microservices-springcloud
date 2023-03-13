@@ -1,8 +1,10 @@
 package com.github.kanttanhed.mscustomer.domain.entity;
 
-import jakarta.persistence.*;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Data
 @Entity

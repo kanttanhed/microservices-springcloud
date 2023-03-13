@@ -5,7 +5,7 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enable: true
           lower-case-service-id: true
 
 server:
@@ -13,7 +13,7 @@ server:
 
 eureka:
   client:
-    fetch_registry: true
-    registry-with-eureka: true
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/

@@ -5,6 +5,7 @@ import com.github.kanttanhed.mscustomer.domain.entity.Customer;
 import com.github.kanttanhed.mscustomer.domain.repository.CustomerRepository;
 import com.github.kanttanhed.mscustomer.domain.service.CustomerService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +17,13 @@ import java.net.URI;
 @RestController
 @RequestMapping("/customer")
 @RequiredArgsConstructor
+@Slf4j
 public class CustomerController {
     private final CustomerService customerService;
 
     @GetMapping
     public String status(){
+        log.info("get status Customer Microservice");
         return "ok";
     }
 
