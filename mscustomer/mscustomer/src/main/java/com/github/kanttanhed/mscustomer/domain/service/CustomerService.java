@@ -14,9 +14,9 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
-    public Customer save(Customer customer){
+    public void save(Customer customer){
         try{
-            return customerRepository.save(customer);
+            customerRepository.save(customer);
         }catch (Exception e){
             throw new RuntimeException(e.getMessage(), e);
         }

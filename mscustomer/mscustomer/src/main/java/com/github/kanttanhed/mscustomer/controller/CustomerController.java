@@ -26,7 +26,6 @@ public class CustomerController {
         log.info("get status Customer Microservice");
         return "ok";
     }
-
     @PostMapping
     public ResponseEntity save(@RequestBody CustomerDTO customerDTO){
 
@@ -39,7 +38,6 @@ public class CustomerController {
               .toUri();
       return ResponseEntity.created(headerLocation).build();
     }
-
     @GetMapping(params = "cpf")
     public ResponseEntity dadosCliente(@RequestParam("cpf") String cpf){
         var cliente = customerService.getByCPF(cpf);

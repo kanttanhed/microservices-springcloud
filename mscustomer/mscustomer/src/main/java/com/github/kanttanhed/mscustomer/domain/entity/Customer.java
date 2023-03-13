@@ -1,6 +1,5 @@
 package com.github.kanttanhed.mscustomer.domain.entity;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +13,6 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column
     private String cpf;
     @Column
