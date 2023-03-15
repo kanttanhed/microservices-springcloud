@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5e133a-9ea0-40f9-9398-5437ddca11cd" name="Changes" comment="Creating Gateway">
-      <change afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/repository/CardsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/service/CardsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/controller/CardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/dtos/SaveCardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/dtos/CardsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/entity/SaveCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/entity/Cards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/repository/SaveCardsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/domain/service/SaveCardsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mscards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mscloudgateway/src/main/java/com/github/kanttanhed/mscloudgateway/MscloudgatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mscloudgateway/src/main/java/com/github/kanttanhed/mscloudgateway/MscloudgatewayApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
