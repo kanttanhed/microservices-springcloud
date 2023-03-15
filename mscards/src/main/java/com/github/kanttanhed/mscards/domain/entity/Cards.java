@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Entity
 @Data
 @NoArgsConstructor
-public class SaveCards {
+public class Cards {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +22,7 @@ public class SaveCards {
     @Column
     private BigDecimal basicLimit;
 
-    public SaveCards(String name, TypeCard type, BigDecimal income, BigDecimal basicLimit) {
+    public Cards(String name, TypeCard type, BigDecimal income, BigDecimal basicLimit) {
         this.name = name;
         this.type = type;
         this.income = income;

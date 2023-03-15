@@ -1,23 +1,27 @@
 package com.github.kanttanhed.mscards.controller;
 
-import com.github.kanttanhed.mscards.domain.dtos.SaveCardDTO;
-import com.github.kanttanhed.mscards.domain.entity.SaveCards;
-import com.github.kanttanhed.mscards.domain.service.SaveCardsService;
+import com.github.kanttanhed.mscards.domain.dtos.CustomerCardsDTO;
+import com.github.kanttanhed.mscards.domain.dtos.CardsDTO;
+import com.github.kanttanhed.mscards.domain.entity.Cards;
+import com.github.kanttanhed.mscards.domain.entity.CustomerCards;
+import com.github.kanttanhed.mscards.domain.service.CardsService;
+import com.github.kanttanhed.mscards.domain.service.CustomerCardsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/cards")
 @RequiredArgsConstructor
 public class CardsController {
 
-    private final SaveCardsService saveCardsService;
+    private final CardsService cardsService;
+    private final CustomerCardsService customerCardsService;
 
     @GetMapping
     public String status(){
@@ -25,9 +29,9 @@ public class CardsController {
     }
 
     @PostMapping
-    public ResponseEntity saveCard(@RequestBody SaveCardDTO saveCardDTO){
-        var cards = saveCardDTO.toModel();
-        saveCardsService.save(cards);
+    public ResponseEntity saveCard(@RequestBody CardsDTO cardsDTO){
+        var cards = cardsDTO.toModel();
+        cardsService.save(cards);
 
         URI headerLocation = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -39,8 +43,21 @@ public class CardsController {
     }
 
     @GetMapping(params = "income")
-    public ResponseEntity<List<SaveCards>> getCardsIncomeUntil(@RequestParam("income") Long income ){
-        var list = saveCardsService.getCardsIncomeLessEquals(income);
+    public ResponseEntity<List<Cards>> getCardsIncomeUntil(@RequestParam("income") Long income ){
+        var list = cardsService.getCardsIncomeLessEquals(income);
         return ResponseEntity.ok(list);
     }
+
+    @GetMapping(params = "cpf")
+    public ResponseEntity<List<CustomerCardsDTO>> getCardsByCustomer(
+            @RequestParam("cpf") String cpf){
+
+        List<CustomerCards> list = customerCardsService.listCardsByCPF(cpf);
+        List<CustomerCardsDTO> resultList = list.stream()
+                .map(CustomerCardsDTO::fromModel)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(resultList);
+
+    }
+
 }
