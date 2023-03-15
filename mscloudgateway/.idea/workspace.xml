@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5e133a-9ea0-40f9-9398-5437ddca11cd" name="Changes" comment="Creating Gateway">
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mscloudgateway/src/main/java/com/github/kanttanhed/mscloudgateway/MscloudgatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mscloudgateway/src/main/java/com/github/kanttanhed/mscloudgateway/MscloudgatewayApplication.java" afterDir="false" />
     </list>
@@ -13,6 +12,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
