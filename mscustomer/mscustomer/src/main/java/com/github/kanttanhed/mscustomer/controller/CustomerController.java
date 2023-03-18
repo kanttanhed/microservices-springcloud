@@ -1,13 +1,9 @@
 package com.github.kanttanhed.mscustomer.controller;
 
 import com.github.kanttanhed.mscustomer.domain.dtos.CustomerDTO;
-import com.github.kanttanhed.mscustomer.domain.entity.Customer;
-import com.github.kanttanhed.mscustomer.domain.repository.CustomerRepository;
 import com.github.kanttanhed.mscustomer.domain.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -39,7 +35,7 @@ public class CustomerController {
       return ResponseEntity.created(headerLocation).build();
     }
     @GetMapping(params = "cpf")
-    public ResponseEntity dadosCliente(@RequestParam("cpf") String cpf){
+    public ResponseEntity CustomerDatas(@RequestParam("cpf") String cpf){
         var cliente = customerService.getByCPF(cpf);
         if(cliente.isEmpty()){
             return ResponseEntity.notFound().build();
