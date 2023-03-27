@@ -1,8 +1,6 @@
 package com.github.kanttanhed.mscreditevaluater.domain.service;
 
-import com.github.kanttanhed.mscreditevaluater.domain.entity.CustomerCard;
-import com.github.kanttanhed.mscreditevaluater.domain.entity.CustomerData;
-import com.github.kanttanhed.mscreditevaluater.domain.entity.CustomerStatus;
+import com.github.kanttanhed.mscreditevaluater.domain.entity.*;
 import com.github.kanttanhed.mscreditevaluater.domain.exception.CustomerDataNotFoundException;
 import com.github.kanttanhed.mscreditevaluater.domain.exception.MicroserviceCommunicationException;
 import com.github.kanttanhed.mscreditevaluater.domain.feignClient.CardsResourceClient;
@@ -13,7 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -21,6 +21,7 @@ public class EvaluateCreditService {
 
     private final CustomerResourceClient customerResourceClient;
     private final CardsResourceClient cardsResourceClient;
+
     public CustomerStatus obtainCustomerStatus(String cpf)
             throws CustomerDataNotFoundException, MicroserviceCommunicationException{
         try {
@@ -36,6 +37,43 @@ public class EvaluateCreditService {
         }catch (FeignException.FeignClientException e){
             int status = e.status();
             if(HttpStatus.NOT_FOUND.value() == status){
+                throw new CustomerDataNotFoundException();
+            }
+            throw new MicroserviceCommunicationException(e.getMessage(), status);
+        }
+    }
+
+    public EvaluationCustomerReturn executeEvaluation(String cpf, Long income)
+            throws CustomerDataNotFoundException, MicroserviceCommunicationException {
+
+        try {
+            ResponseEntity<CustomerData> customerDataResponse = customerResourceClient.CustomerData(cpf);
+            ResponseEntity<List<Card>> cardsResponse = cardsResourceClient.getCardsIncomeUntil(income);
+
+            List<Card> cards = cardsResponse.getBody();
+            List<ApprovedCard> listApprovedCards = cards.stream().map(card -> {
+
+                CustomerData customerData = customerDataResponse.getBody();
+
+                BigDecimal basicLimit = card.getBasicLimit();
+                BigDecimal ageBD = BigDecimal.valueOf(customerData.getAge());
+                var factor = ageBD.divide(BigDecimal.valueOf(10));
+                BigDecimal approvedLimit = factor.multiply(basicLimit);
+
+                ApprovedCard approvedCard = new ApprovedCard();
+                approvedCard.setCard(card.getName());
+                approvedCard.setType(card.getType());
+                approvedCard.setBasicLimit(approvedLimit);
+
+                return approvedCard;
+
+            }).collect(Collectors.toList());
+
+            return new EvaluationCustomerReturn(listApprovedCards);
+
+        } catch (FeignException.FeignClientException e) {
+            int status = e.status();
+            if (HttpStatus.NOT_FOUND.value() == status) {
                 throw new CustomerDataNotFoundException();
             }
             throw new MicroserviceCommunicationException(e.getMessage(), status);

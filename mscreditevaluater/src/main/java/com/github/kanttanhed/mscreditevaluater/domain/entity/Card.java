@@ -2,9 +2,12 @@ package com.github.kanttanhed.mscreditevaluater.domain.entity;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
-public class CustomerData {
+public class Card {
     private Long id;
     private String name;
-    private Integer age;
+    private String type;
+    private BigDecimal basicLimit;
 }

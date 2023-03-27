@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5e133a-9ea0-40f9-9398-5437ddca11cd" name="Changes" comment="Creating Gateway">
+      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/controller/CardsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/controller/CreditEvaluatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/controller/CreditEvaluatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/entity/CustomerCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/entity/CustomerCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/feignClient/CustomerResourceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/feignClient/CustomerResourceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/entity/CustomerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/entity/CustomerData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/feignClient/CardsResourceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/feignClient/CardsResourceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/service/EvaluateCreditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/service/EvaluateCreditService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
