@@ -13,6 +13,7 @@ public class CustomerCardsService {
     private final CustomerCardsRepository customerCardsRepository;
 
     public List<CustomerCards> listCardsByCPF(String cpf){
+
         return customerCardsRepository.findByCpf(cpf);
     }
 }

@@ -1,6 +1,12 @@
 spring:
   application:
     name: mscards
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
   h2:
     console:
       enabled: true
@@ -21,3 +27,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+mq:
+  queues:
+    create-cards: create-cards
