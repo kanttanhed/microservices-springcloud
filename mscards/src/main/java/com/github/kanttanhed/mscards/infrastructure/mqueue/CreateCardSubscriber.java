@@ -1,13 +1,11 @@
 package com.github.kanttanhed.mscards.infrastructure.mqueue;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.kanttanhed.mscards.domain.entity.Cards;
 import com.github.kanttanhed.mscards.domain.entity.CustomerCards;
 import com.github.kanttanhed.mscards.domain.entity.DatasRequestIssueCard;
 import com.github.kanttanhed.mscards.domain.repository.CardsRepository;
 import com.github.kanttanhed.mscards.domain.repository.CustomerCardsRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
