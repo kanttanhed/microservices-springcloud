@@ -1,8 +1,7 @@
 package com.github.kanttanhed.mscreditevaluater.controller;
 
-import com.github.kanttanhed.mscreditevaluater.domain.entity.CustomerStatus;
-import com.github.kanttanhed.mscreditevaluater.domain.entity.EvaluationCustomerReturn;
-import com.github.kanttanhed.mscreditevaluater.domain.entity.EvaluationData;
+import com.github.kanttanhed.mscreditevaluater.domain.entity.*;
+import com.github.kanttanhed.mscreditevaluater.domain.exception.CardRequestException;
 import com.github.kanttanhed.mscreditevaluater.domain.exception.CustomerDataNotFoundException;
 import com.github.kanttanhed.mscreditevaluater.domain.exception.MicroserviceCommunicationException;
 import com.github.kanttanhed.mscreditevaluater.domain.service.EvaluateCreditService;
@@ -44,6 +43,17 @@ public class CreditEvaluatorController {
             return ResponseEntity.notFound().build();
         } catch (MicroserviceCommunicationException e) {
             return ResponseEntity.status(HttpStatus.resolve(e.getStatus())).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("request-card")
+    public ResponseEntity cardRequest (@RequestBody DatasRequestIssueCard datasRequestIssueCard){
+        try {
+            ProtocolCardRequest protocolCardRequest = evaluateCreditService
+                    .requestIssueCard(datasRequestIssueCard);
+            return ResponseEntity.ok(protocolCardRequest);
+        }catch (CardRequestException e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 }

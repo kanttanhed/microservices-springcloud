@@ -10,5 +10,4 @@ public class DatasRequestIssueCard {
     private String cpf;
     private String address;
     private BigDecimal basicLimit;
-
 }
