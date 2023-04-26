@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5e133a-9ea0-40f9-9398-5437ddca11cd" name="Changes" comment="Creating Gateway">
-      <change beforePath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/infrastructure/mqueue/CreateCardSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscards/src/main/java/com/github/kanttanhed/mscards/infrastructure/mqueue/CreateCardSubscriber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/controller/CreditEvaluatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/controller/CreditEvaluatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/entity/DatasRequestIssueCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/entity/DatasRequestIssueCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/service/EvaluateCreditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mscreditevaluater/src/main/java/com/github/kanttanhed/mscreditevaluater/domain/service/EvaluateCreditService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

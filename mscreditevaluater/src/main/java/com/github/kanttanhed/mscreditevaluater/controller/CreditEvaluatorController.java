@@ -46,11 +46,11 @@ public class CreditEvaluatorController {
         }
     }
 
-    @PostMapping("request-card")
-    public ResponseEntity cardRequest (@RequestBody DatasRequestIssueCard datasRequestIssueCard){
+    @PostMapping(value = "request-card")
+    public ResponseEntity cardRequest (@RequestBody DatasRequestIssueCard datas){
         try {
             ProtocolCardRequest protocolCardRequest = evaluateCreditService
-                    .requestIssueCard(datasRequestIssueCard);
+                    .requestIssueCard(datas);
             return ResponseEntity.ok(protocolCardRequest);
         }catch (CardRequestException e){
             return ResponseEntity.internalServerError().body(e.getMessage());

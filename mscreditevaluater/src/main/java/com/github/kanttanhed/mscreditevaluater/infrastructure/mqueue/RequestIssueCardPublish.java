@@ -15,14 +15,13 @@ public class RequestIssueCardPublish {
     private final RabbitTemplate rabbitTemplate;
     private final Queue queueIssueCard;
 
-    public void cardRequest(DatasRequestIssueCard datasRequestIssueCard) throws JsonProcessingException {
-        var json = convertIntoJson(datasRequestIssueCard);
+    public void cardRequest(DatasRequestIssueCard datas) throws JsonProcessingException {
+        var json = convertIntoJson(datas);
         rabbitTemplate.convertAndSend(queueIssueCard.getName(), json);
     }
 
-    private String convertIntoJson(DatasRequestIssueCard datasRequestIssueCard) throws JsonProcessingException{
+    private String convertIntoJson(DatasRequestIssueCard datas) throws JsonProcessingException{
         ObjectMapper mapper = new ObjectMapper();
-        var json = mapper.writeValueAsString(datasRequestIssueCard);
-        return json;
+        return mapper.writeValueAsString(datas);
     }
 }
