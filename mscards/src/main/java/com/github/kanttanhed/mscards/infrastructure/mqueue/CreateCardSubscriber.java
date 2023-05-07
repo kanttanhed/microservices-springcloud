@@ -7,12 +7,14 @@ import com.github.kanttanhed.mscards.domain.entity.DatasRequestIssueCard;
 import com.github.kanttanhed.mscards.domain.repository.CardsRepository;
 import com.github.kanttanhed.mscards.domain.repository.CustomerCardsRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class CreateCardSubscriber {
 
     private final CardsRepository cardsRepository;
@@ -34,7 +36,7 @@ public class CreateCardSubscriber {
             customerCardsRepository.save(customerCards);
 
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("Erro ao receber solicitacao de emissao de cartao: {} ", e.getMessage());
         }
     }
 }
